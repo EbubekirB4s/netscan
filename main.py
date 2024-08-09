@@ -24,23 +24,17 @@ def argControl():
     
 
 def controlIpAdress(args):
-    ip = '192.168.1.33'
-    # for i in range(0,len(args)):
-    #     try:
-    #         ip=ipaddress.ip_address(args[i])
-    #         break
-    #     except:
-    #         ip=''
-    # if(ip==''):
-    #     print('please enter the valid ip adress')
-    # else:
-    #    Scanning.normalScan(ip) 
-    Scanning.normalScan(ip)
-    # Is an IP adress control code below
-    # try:
-    #     ip= ipaddress.ip_address()
-    # except ValueError:
-    #     print('The Ip Adress is not found')
-    
+    ip = ''
+    for i in range(0,len(args)):
+        try:
+            ip=ipaddress.ip_address(args[i])
+            break
+        except:
+            ip=''
+    if(ip==''):
+        print('please enter the valid ip adress')
+    else:
+        Scanning.normalScan(str(ip))
+        
 
 main()
