@@ -1,6 +1,7 @@
 import Scanning
 def main():
-    return ""
+    return switchdict
+    
 switchdict = {
 }
 class Switches:
@@ -9,7 +10,5 @@ class Switches:
         self.function=function
     def addSwitchsToDict(self):
         switchdict[self.arg] = self.function
-        print(switchdict)
-udpScanSwitch = Switches('-sU',Scanning.udpScan)
-switchdict[udpScanSwitch.arg] = udpScanSwitch.function
+
 main()
