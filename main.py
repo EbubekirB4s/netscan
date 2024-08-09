@@ -2,36 +2,45 @@ import sys
 import ipaddress
 import socket
 import switches
+import Scanning
 
 def main():
-    getArgs()
+   argControl()
+def argControl():
     
-
-
-
-def getArgs():
-    argList=[]
-    # return sys.argv >>>> returned an object exp. ['.\\main.py', '-a']
-    
-    if(len(sys.argv)==1):
-        print("please enter the an ıp adress for scan")
+    del sys.argv[0]
+    args = sys.argv
+    if(len(args)==0):
+        print("please enter the Ip")
     else:
-        
-        argLength = len(sys.argv)-1
-        for i in range(1,len(sys.argv)):
-            argList.append(sys.argv[i])
-        argControl(argList)
-           
-def argControl(argList):
-    for i in range(0,len(argList)):
-        print(switches.switchdict)
+        controlIpAdress(args=args)
+        # for i in range(0,len(args)):
+        #     if('.' in args[i]):
+        #         print(args[i])
+        #     else:
+        #         print('its not ip')
         # if(argList[i] in switches.switchdict):
         #     return argList[i]
-            
+    
 
-def controlIpAdress(ip):
-    try:
-        ip= ipaddress.ip_address()
-    except ValueError:
-        print('The Ip Adress is not found')
+def controlIpAdress(args):
+    ip = '192.168.1.33'
+    # for i in range(0,len(args)):
+    #     try:
+    #         ip=ipaddress.ip_address(args[i])
+    #         break
+    #     except:
+    #         ip=''
+    # if(ip==''):
+    #     print('please enter the valid ip adress')
+    # else:
+    #    Scanning.normalScan(ip) 
+    Scanning.normalScan(ip)
+    # Is an IP adress control code below
+    # try:
+    #     ip= ipaddress.ip_address()
+    # except ValueError:
+    #     print('The Ip Adress is not found')
+    
+
 main()
