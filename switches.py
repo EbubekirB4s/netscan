@@ -11,4 +11,7 @@ class Switches:
     def addSwitchsToDict(self):
         switchdict[self.arg] = self.function
 
+scanTDP= Switches('-sT', Scanning.tdpScan)
+scanTDP.addSwitchsToDict()
+
 main()
